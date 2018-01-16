@@ -1,20 +1,260 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="row">
+  <div class="col-md-4 heading">
+      <h1 class="text-left"><strong>John<br>Doe</strong></h1>
+      <small class="text-muted"><h2>Detailed report</h2></small>
 
+</div>
+<div class="col-md-8 logo" >
+  <img src="./assets/byju.png" alt="byju's logo">
+<br>
+<p class="lead"><strong>Byju's Classes</strong><br><span>Think and Learn Pvt Ltd<br>2nd Floor,Bajaj Bhawan<br>B-10,Sector-3, Noida-201301</span></p>
+</div>
+
+
+  </div>
+<br><br><br>
+<div class="row">
+  <div class="col-md-8 sub-heading">
+    <h3 class="text-left">RESULT</h3>
+
+  </div>
+
+
+</div>
+<br>
+<br>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col"><h4 class="text-left">TOTAL SUMMARY</h4></th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr class="table-active">
+      <td>Score
+      <br>
+      <strong>78</strong>
+      </td>
+        <td>Complete
+        <br>
+        <strong>{{model.analytics?.overall_analysis?.completion_percentage | number : '1.2-2'}} %</strong>
+      </td>
+
+
+    </tr>
+    <tr class="table-active">
+      <td>Accuracy
+        <br>
+      <strong>{{model.analytics?.overall_analysis?.accuracy | number : '1.2-2'}} %</strong>
+      </td>
+      <td>Correct
+      <br>
+      <strong>{{model.analytics?.overall_analysis?.correct}}</strong>
+      </td>
+
+
+    </tr>
+    <tr class="table-active">
+      <td>Speed
+      <br>
+      <strong>{{model.analytics?.overall_analysis?.speed}}+ Q/Hr</strong>
+        </td>
+        <td>Wrong
+        <br>
+        <strong>{{model.analytics?.overall_analysis?.wrong}}</strong>
+        </td>
+
+
+    </tr>
+
+
+  </tbody>
+</table>
+<br>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col"><h4 class="text-left">SUBJECT WISE SCORE</h4></th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr class="table-active">
+      <td class="text-uppercase">{{score.section_name}}</td>
+      <td>{{score.correct}}</td>
+
+
+    </tr>
+
+  </tbody>
+</table>
+<br>
+<h2 class="text-left">Subject wise Detailed Report</h2>
+<!--Loop through a div to get subjectwise report of every subject-->
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col"><h4 class="text-left">{{section.section_name | uppercase}}</h4></th>
+
+    </tr>
+  </thead>
+
+              <tbody>
+                <tr class="table-active">
+                  <td>Score
+                    <br>
+                    <strong>{{section.score}}</strong>
+                  </td>
+                  <td>Complete
+                    <br>
+                    <strong>{{section.completion_percentage | number : '1.2-2'}} %</strong>
+                  </td>
+                </tr>
+                <tr class="table-active">
+                  <td>Accuracy
+                    <br>
+                    <strong>{{section.accuracy | number : '1.2-2'}} %</strong>
+                  </td>
+                  <td>Correct
+                    <br>
+                    <strong>{{section.correct}}</strong>
+                  </td>
+                </tr>
+                <tr class="table-active">
+                  <td>Speed
+                    <br>
+                    <strong>{{section.speed}}+ Q/Hr</strong>
+                  </td>
+                  <td>Wrong
+                    <br>
+                    <strong>{{section.wrong}}</strong>
+                  </td>
+                </tr>
+              </tbody>
+
+
+</table>
+<h2 class="text-left">Chapter wise Detailed Report</h2>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col"><h4 class="text-left">{{section.section_name | uppercase}}</h4></th>
+
+    </tr>
+    <tr>
+      <th scope="col">Chapter Name</th>
+      <th scope="col">Attempted</th>
+      <th scope="col">Correct</th>
+      <th scope="col">Incorrect</th>
+      <th scope="col">Total Score</th>
+
+
+
+    </tr>
+  </thead>
+
+              <tbody>
+                <tr class="table-active">
+                  <td>{{chapters.name}}
+                  </td>
+                  <td>{{chapter.name.attempted}}
+                  </td>
+                  <td>{{chapter.name.correct}}
+                  </td>
+                  <td>{{chapter.name.incorrect}}
+                  </td>
+                  <td>{{chapter.name.total}}
+                  </td>
+                </tr>
+              </tbody>
+
+
+</table>
+<br><br><br>
+<div class="row">
+  <div class="col-md-8 sub-heading">
+    <h3 class="text-left">ANALYTICS</h3>
+
+  </div>
+
+
+</div>
+<br><br>
+
+<h4 class="text-left">Easy misses</h4>
+<div class="row">
+  <div class="col-md-12"><img src="{{question.src}}" class="img-responsive text-center"></div>
+</div>
+<br><br>
+
+<br><br>
+
+<h4 class="text-left">Time Spoilers</h4>
+<div class="row">
+  <div class="col-md-12"><img src="{{question.src}}" class="img-responsive text-center"></div>
+</div>
+<br><br>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col"><h4 class="text-left">Comparison</h4></th>
+
+    </tr>
+    <tr>
+      <th scope="col">Section</th>
+      <th scope="col">My Score</th>
+      <th scope="col">Cut off</th>
+      <th scope="col">Topper Score</th>
+
+
+
+    </tr>
+  </thead>
+
+              <tbody>
+                <tr class="table-active">
+                  <td>{{comparison.section_name}}
+                  </td>
+                  <td>{{comparison.score}} / {{comparison.section_max_marks}}
+                  </td>
+                  <td>{{comparison.section_cut_off}}
+                  </td>
+                  <td>{{comparison.section_topper_marks}}
+                  </td>
+
+                </tr>
+              </tbody>
+
+
+</table>
+<br><br><br>
+<div class="row">
+  <div class="col-md-8 sub-heading">
+    <h3 class="text-left">SOLUTION</h3>
+
+  </div>
+
+
+</div>
+<br><br><br>
+<div class="row">
+  <div class="col-md-12"><img src="{{question.src}}" class="img-responsive text-center"></div>
+</div>
+<h6 class="text-left"> Your Answer</h6>
+<div class="row"><div class="col-md-12"><div class="alert alert-dismissible alert-danger">
+  <strong>B</strong>
+</div></div></div>
+<h6 class="text-left">Correct Answer</h6>
+<div class="row"><div class="col-md-12"><div class="alert alert-dismissible alert-success">
+  <strong>C</strong>
+</div></div></div>
+<br>
+<div class="row">
+  <div class="col-md-12"><img src="{{solution.src}}" class="img-responsive text-center"></div>
+</div>
